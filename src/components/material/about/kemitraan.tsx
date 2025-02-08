@@ -24,14 +24,14 @@ import Mitra18 from "../../../../public/img/about/c2mitra18.jpg"
 
 export function Kemitraan() {
   return (
-    <div className="h-[40rem] rounded-md flex flex-col gap-y-6 antialiased items-center justify-center relative overflow-hidden">
+    <div className="h-[41rem] rounded-md flex flex-col gap-y-6 antialiased items-center justify-center relative overflow-hidden">
       <h1 className="text-3xl z-20 font-semibold leading-[50px]">
             <span className="italic">Kemitraan Kami</span>
       </h1>
       <InfiniteMovingCards
         items={testimonials}
         direction="right"
-        speed="normal"
+        speed="slow"
         pauseOnHover={true}
       />
     </div>

@@ -7,7 +7,7 @@ import { Separator } from '../ui/separator'
 
 function Footer() {
   return (
-      <div className="bg-[#01377F] px-8 pt-16 w-screen md:px-24 lg:px-8">
+      <div className="bg-[#01377F] px-8 pt-16 w-screen md:px-24 lg:px-8 flex flex-col items-center justify-between gap-y-8">
       <div className="flex flex-col lg:flex-row w-full h-full items-start justify-between gap-y-14 lg:gap-y-0">
         {/* 1 */}
         <div className="w-full md:w-[28vw] flex gap-x-3 items-center">
@@ -21,40 +21,9 @@ function Footer() {
             
           </Link>
         </div>
-        <Separator orientation='horizontal' className=' w-full bg-white inline-flex md:hidden' />
-        {/* 2 */}
-        <div className="space-y-2 text-sm w-full lg:w-[25vw] flex flex-col items-center">
-          <p className="text-base font-bold tracking-wide text-gray-100">
-            Contacts
-          </p>
-          <div className="flex gap-y-3 flex-col">
-            <div className="flex">
-              <p className="mr-1 text-gray-300">Email:</p>
-              <a
-                href="mailto:hmotritonitb129@gmail.com"
-                aria-label="Our email"
-                title="Our email"
-                className="transition-colors duration-300 text-gray-300 hover:text-deep-purple-800"
-              >
-                hmotritonitb129@gmail.com
-              </a>
-            </div>
-            <div className="flex">
-              <p className="mr-1 text-gray-300">Alamat:</p>
-              <a
-                href="https://g.co/kgs/sWD4tJW"
-                aria-label="Our email"
-                title="Our email"
-                className="transition-colors duration-300 text-gray-300 hover:text-deep-purple-800"
-              >
-                Sekretariat HMO “TRITON” ITB, Gedung Labtek XI-B, Jalan Ganesa No. 10 Bandung 40132
-              </a>
-            </div>
-          </div>
-        </div>
-        <Separator orientation='horizontal' className=' w-full bg-white inline-flex md:hidden' />
+        <div className=' h-[120px] my-auto w-[1px] bg-white hidden lg:inline-flex' />
         {/* 3 */}
-        <div className='w-full lg:w-[25vw] flex flex-col items-center lg:items-end gap-y-4'>
+        <div className='w-full lg:w-[25vw] space-y-2 flex flex-col items-center'>
           <span className="text-base font-bold tracking-wide text-gray-100">
             Social Media
           </span>
@@ -90,6 +59,37 @@ function Footer() {
           </div>
           <p className="mt-4 text-sm text-gray-300">
           </p>
+        </div>
+        <div className=' h-[120px] my-auto w-[1px] bg-white hidden lg:inline-flex' />
+        {/* 2 */}
+        <div className=" text-sm w-full lg:w-[25vw]  flex flex-col items-center lg:items-end gap-y-4">
+          <p className="text-base font-bold tracking-wide text-gray-100">
+            Contacts
+          </p>
+          <div className="flex gap-y-3 flex-col items-center lg:items-end">
+            <div className="flex flex-col gap-y-2 items-center lg:items-end">
+              <p className=" text-gray-300">Email</p>
+              <a
+                href="mailto:hmotritonitb129@gmail.com"
+                aria-label="Our email"
+                title="Our email"
+                className="transition-colors duration-300 text-gray-300 hover:text-deep-purple-800 text-center lg:text-end"
+              >
+                hmotritonitb129@gmail.com
+              </a>
+            </div>
+            <div className="flex flex-col gap-y-2 items-center lg:items-end">
+              <p className="mr-1 text-gray-300">Alamat</p>
+              <a
+                href="https://g.co/kgs/sWD4tJW"
+                aria-label="Our email"
+                title="Our email"
+                className="transition-colors duration-300 text-gray-300 hover:text-deep-purple-800 text-center lg:text-end"
+              >
+                Sekretariat HMO “TRITON” ITB, Gedung Labtek XI-B, Jalan Ganesa No. 10 Bandung 40132
+              </a>
+            </div>
+          </div>
         </div>
       </div>
       <Separator orientation='horizontal' className=' w-full bg-white' />

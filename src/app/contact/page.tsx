@@ -8,6 +8,8 @@ import { Label } from '@/components/ui/label'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { Send } from '@/lib/send';
+import Navbar from '@/components/material/navbar'
+import Footer from '@/components/material/footer'
 
 
 function ContactUs() {
@@ -55,7 +57,9 @@ function ContactUs() {
 
       return (
     <div className="w-screen h-screen flex flex-col">
-      <div className='w-full lg:h-screen flex flex-col lg:flex-row'>
+      {/* navbar */}
+      <Navbar />
+      <div className='w-full lg:h-screen flex flex-col lg:flex-row mt-[90px]'>
             {/* left lg */}
             <div className="relative flex-[0.5] text-gray-100">
                   {/* image */}
@@ -179,6 +183,7 @@ function ContactUs() {
                   </div>
             </form>
       </div>
+      <Footer />
     </div>
   )
 }

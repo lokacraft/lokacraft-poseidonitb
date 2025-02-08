@@ -8,7 +8,7 @@ import Image from "next/image"
 import { signIn } from "@/lib/Auth"
 import { useRouter } from 'next/navigation';
 import { Checkbox } from "./ui/checkbox"
-import Logo from "../../public/img/logo.jpg"
+import Logo from "../../public/img/c2logo.png"
 
 export function LoginForm({
   className,
@@ -27,7 +27,7 @@ export function LoginForm({
         const rememberMe = form.rememberMe.checked;
         try {
               await signIn(username, password, rememberMe);
-              router.replace("/admin/dashboard")
+              router.replace("/admin/article")
         } catch (e) {
               console.error(e);
         }
@@ -85,7 +85,7 @@ export function LoginForm({
               <Image
                 src={Logo}
                 alt="Image"
-                className="absolute inset-0 h-full w-full object-cover dark:brightness-[0.2] dark:grayscale"
+                className="absolute inset-0 h-full w-full object-contain dark:brightness-[0.2] dark:grayscale"
                 width={500}
                 height={500}
               />

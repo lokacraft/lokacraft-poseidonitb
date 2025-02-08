@@ -32,7 +32,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   const user = useUser();
   
   const email = user && user.email ? user.email : "guest@example.com";
-  const displayName = user && user.displayName ? user.displayName : "Guest";
+  const displayName = user && user.displayName ? user.displayName : "Admin";
   const avatar = user && user.photoURL ? user.photoURL : "/https://github.com/shadcn.png";
   const data = {
     user: {
@@ -42,32 +42,12 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
     },
     teams: [
       {
-        name: "hmo triton itb",
+        name: "POSEIDON ITB",
         logo: GalleryVerticalEnd,
-        plan: "Enterprise",
+        plan: "Badan  Semi Otonom",
       },
     ],
     navMain: [
-      {
-        title: "Playground",
-        url: "#",
-        icon: BookOpen,
-        isActive: true,
-        items: [
-          {
-            title: "dashboard",
-            url: "/admin/dashboard/",
-          },
-          {
-            title: "Get Started",
-            url: "#",
-          },
-          {
-            title: "Tutorials",
-            url: "#",
-          },
-        ],
-      },
       {
         title: "Artikel",
         url: "#",
@@ -75,20 +55,12 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         isActive: false,
         items: [
           {
-            title: "Tambah Baru",
-            url: "/admin/article/create",
-          },
-          {
-            title: "Artikel",
+            title: "List Artikel",
             url: "/admin/article/",
           },
           {
             title: "Kategori",
             url: "/admin/category/",
-          },
-          {
-            title: "Settings",
-            url: "#",
           },
         ],
       },
@@ -98,7 +70,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         icon: Bot,
         items: [
           {
-            title: "author",
+            title: "List Author",
             url: "/admin/author/",
           },
         ],
@@ -109,31 +81,8 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         icon: Bot,
         items: [
           {
-            title: "pilar",
+            title: "List Pilar",
             url: "/admin/pilar/",
-          },
-        ],
-      },
-      {
-        title: "Settings",
-        url: "#",
-        icon: Settings2,
-        items: [
-          {
-            title: "General",
-            url: "#",
-          },
-          {
-            title: "Team",
-            url: "#",
-          },
-          {
-            title: "Billing",
-            url: "#",
-          },
-          {
-            title: "Limits",
-            url: "#",
           },
         ],
       },
@@ -163,7 +112,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       </SidebarHeader>
       <SidebarContent>
         <NavMain items={data.navMain} />
-        <NavProjects projects={data.projects} />
+        {/* <NavProjects projects={data.projects} /> */}
       </SidebarContent>
       <SidebarFooter>
         <NavUser user={data.user} />

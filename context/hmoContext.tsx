@@ -86,7 +86,7 @@ const HmoDataProvider = ({children}: HmoProviderProps) => {
             const getPilars = async () => {
                   const authorCollection = collection(db, 'pilars');
                   const latestSnapshot = await query(authorCollection,
-                        orderBy('name', 'asc'))
+                        orderBy('updatedOn', 'asc'))
                   const unsubscribe = onSnapshot(latestSnapshot, (querySnapshot) => {
                         setPilars(
                           querySnapshot.docs.map(doc => ({
@@ -95,7 +95,7 @@ const HmoDataProvider = ({children}: HmoProviderProps) => {
                               name: doc.data().name,
                               role: doc.data().role,
                               imgUrl: doc.data().imgUrl,
-                              postedOn: doc.data().postedOn,
+                              updatedOn: doc.data().updatedOn,
                             }
                           }))
                         );

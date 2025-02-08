@@ -85,7 +85,7 @@ export default function Page({ params: paramsPromise }: { params: Promise<{ slug
   }
 
   return (
-    <div className=" bg-[#F7F8FF] flex w-full flex-col items-center gap-y-20">
+    <div className=" bg-[#F7F8FF] flex w-full flex-col items-center gap-y-14">
       {/* header */}
       <div className="flex flex-col gap-y-4 w-full lg:flex-row lg:items-start lg:justify-between lg:gap-x-10 lg:w-[80%] mx-auto lg:mt-[140px]">
         {/* image */}
@@ -153,7 +153,7 @@ export default function Page({ params: paramsPromise }: { params: Promise<{ slug
       </div>
       <Separator orientation='horizontal' className='w-[80%] my-8' />
       {/* content */}
-      <div className="w-[80%] mx-auto mt-20">
+      <div className="w-[80%] mx-auto mt-0 mb-20">
       {article.body.split('<br />').map((item: string, index: number) => (
             <div key={index}>
                   <p className="text-left text-gray-700">{item}</p>

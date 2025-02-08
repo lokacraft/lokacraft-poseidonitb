@@ -41,8 +41,7 @@ function EditPilar({eid, etitle, erole, eimgUrl}: BannerProps) {
               await updateDoc(categoryRef, {
                 name: name,
                 role: role,
-                imgUrl: imgUrl,
-                updatedOn: serverTimestamp()
+                imgUrl: imgUrl
               });
             //   setName("")
             //   setRole("")

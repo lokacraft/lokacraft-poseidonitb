@@ -13,9 +13,11 @@ type Testimonial = {
 };
 export const AnimatedTestimonials = ({
   testimonials,
+  isLandScape = false,
   autoplay = false,
 }: {
   testimonials: Testimonial[];
+  isLandScape?: boolean;
   autoplay?: boolean;
 }) => {
   const [active, setActive] = useState(0);
@@ -43,7 +45,7 @@ export const AnimatedTestimonials = ({
     return Math.floor(Math.random() * 21) - 10;
   };
   return (
-    <div className="max-w-sm md:max-w-4xl mx-auto antialiased font-sans px-4 md:px-8 lg:px-12 py-20">
+    <div className={` ${isLandScape === true ? "max-w-sm md:max-w-7xl" : "max-w-sm md:max-w-4xl"}  mx-auto antialiased font-sans px-4 md:px-8 lg:px-12 py-20`}>
       <div className="relative grid grid-cols-1 md:grid-cols-2  gap-20">
         <div>
           <div className="relative h-80 w-full">
@@ -77,7 +79,7 @@ export const AnimatedTestimonials = ({
                     duration: 0.4,
                     ease: "easeInOut",
                   }}
-                  className="absolute inset-0 origin-bottom"
+                  className={`absolute inset-0 origin-bottom ${isLandScape === true ? "h-full w-[calc(100%+0%)]" : ""}`}
                 >
                   <Image
                     src={testimonial.src}
@@ -139,7 +141,7 @@ export const AnimatedTestimonials = ({
                   }}
                   className="inline-block"
                 >
-                  {word}&nbsp;
+                  {word}
                 </motion.span>
               ))}
             </motion.p>

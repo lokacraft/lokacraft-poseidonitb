@@ -33,6 +33,7 @@ import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover
 import { Separator } from '@/components/ui/separator'
 import { Dialog, DialogClose, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog'
 import EditPilar from '@/components/material/admin/pilar/EditPilar'
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
     
 
 function Pilar() {
@@ -75,7 +76,7 @@ function Pilar() {
 
   return (
     <>
-    <NavHeader title="Author" />
+    <NavHeader title="List Pilar" />
     <div className="flex flex-1 flex-col gap-4 p-4 pt-0">
       <div className="w-full flex flex-col space-y-5">
             <div className="w-full flex items-center justify-between">
@@ -132,7 +133,7 @@ function Pilar() {
                   <TableCaption>A list of your article&apos;s categories.</TableCaption>
                   <TableHeader>
                   <TableRow>
-                        <TableHead className="w-[100px]">uid</TableHead>
+                        <TableHead className="w-[100px]">photo</TableHead>
                         <TableHead>Nama</TableHead>
                         <TableHead>Role</TableHead>
                         <TableHead className="text-right">Action</TableHead>
@@ -141,7 +142,12 @@ function Pilar() {
                   <TableBody>
                   {pilars.map((item) => (
                         <TableRow key={item.id}>
-                              <TableCell>{item.id}</TableCell>
+                              <TableCell>
+                              <Avatar>
+                                    <AvatarImage src={`${item.data.imgUrl}`} />
+                                    <AvatarFallback>CN</AvatarFallback>
+                              </Avatar>
+                              </TableCell>
                               <TableCell className="font-semibold">{item.data.name}</TableCell>
                               <TableCell>{item.data.role}</TableCell>
                               <TableCell className="text-right">

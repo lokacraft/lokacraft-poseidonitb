@@ -107,7 +107,7 @@ const GalleryPage: React.FC = () => {
       {/* quotes */}
       <div className="w-[80%] mx-auto flex items-center justify-center my-6">
         <h1 className="italic text-2xl text-center">
-        Di setiap hembusan angin riak ombak, terukir cerita tentang ketulusan dan kerja keras tentang ,tangan tangan yang membangun bukan hanya demi hari ini, taip untuk masa depan yang lebih baik
+        Di setiap hembusan angin riak ombak, terukir cerita tentang ketulusan dan kerja keras tentang ,tangan tangan yang membangun bukan hanya demi hari ini, tapi untuk masa depan yang lebih baik
         </h1>
       </div>
       <div className="h-[120px] w-full"></div>

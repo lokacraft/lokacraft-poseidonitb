@@ -28,7 +28,7 @@ export function Testimonial() {
   return (
       <div id="testimonial" className="mt-20 w-[90%] mx-auto flex flex-col gap-y-6 lg:gap-y-8 items-center z-10">
         <h1 className="text-3xl z-20 font-semibold leading-[50px]">
-          <span className="italic">
+          <span className="italic font-semibold">
             Apa Kata Mereka
           </span> 
         </h1>

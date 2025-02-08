@@ -46,7 +46,7 @@ Pengarengan` },
             Program Kerja Kami
           </span> 
         </h1>
-            <AnimatedTestimonials testimonials={programKerjas} />;
+            <AnimatedTestimonials isLandScape={true} testimonials={programKerjas} />
       </div>
   ); 
 }

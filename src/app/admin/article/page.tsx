@@ -46,6 +46,7 @@ import { RiMoreLine } from "react-icons/ri";
 import { Textarea } from '@/components/ui/textarea'
 import EditArticle from '@/components/material/admin/article/EditArticle'
 import { Separator } from '@/components/ui/separator'
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 
 export default function Articles() {
       const {article} = useContext(HmoContext)
@@ -230,10 +231,7 @@ export default function Articles() {
                   <TableCaption>A list of your articles.</TableCaption>
                   <TableHeader>
                   <TableRow>
-                        <TableHead className="w-[100px]">uid</TableHead>
-                        <TableHead>Banner</TableHead>
-                        <TableHead>Judul</TableHead>
-                        <TableHead>Deskripsi</TableHead>
+                        <TableHead className="w-[300px]">Judul</TableHead>
                         <TableHead>Waktu Baca</TableHead>
                         <TableHead>Author</TableHead>
                         <TableHead>Kategori</TableHead>
@@ -243,12 +241,15 @@ export default function Articles() {
                   <TableBody>
                   {article.map((item) => (
                         <TableRow key={item.id}>
-                              <TableCell>{item.id}</TableCell>
-                              <TableCell className="font-semibold">{item.data.authorId}</TableCell>
                               <TableCell className="font-semibold">{item.data.title}</TableCell>
-                              <TableCell>{item.data.description}</TableCell>
-                              <TableCell>{item.data.minutesRead}</TableCell>
-                              <TableCell>{item.data.author?.name}</TableCell>
+                              <TableCell>{item.data.minutesRead}{" "}Menit</TableCell>
+                              <TableCell className='flex items-center gap-x-2'>
+                              <Avatar>
+                                    <AvatarImage src={`${item.data.author?.imgUrl}`} />
+                                    <AvatarFallback>CN</AvatarFallback>
+                              </Avatar>  
+                                {item.data.author?.name}
+                              </TableCell>
                               <TableCell>{item.data.category?.name}</TableCell>
                               <TableCell className="text-right">
                               <Popover>

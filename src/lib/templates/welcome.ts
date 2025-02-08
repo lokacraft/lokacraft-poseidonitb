@@ -82,7 +82,7 @@ export const welcomeTemplate = `
 <body>
     <div class="container">
         <div class="header">
-            <img src="https://i.postimg.cc/dtg5Zgd4/logo-Footer.png" alt="lexica">
+            
         </div>
         <div class="content">
             <h1>Pesan Baru dari Formulir Kontak Website Anda</h1>
@@ -101,7 +101,7 @@ export const welcomeTemplate = `
             <p>Silakan segera tindak lanjuti pesan ini sesuai prosedur yang berlaku untuk memastikan kepuasan pelanggan.</p>
             
             <p>Terima kasih</p>
-            <p>Tim Dukungan Arthaloka</p>
+            <p>Tim Dukungan POSEIDON</p>
         </div>
         <div class="footer">
             <p>Follow us on:</p>

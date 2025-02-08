@@ -39,12 +39,12 @@ export default function PilarPoseidon() {
                   <SwiperSlide key={item.id} className=''>
                         <div className='w-full h-[400px] flex flex-col gap-y-3 pb-4 border border-gray-700'>
 
-                          <div className="w-full h-3/4 bg-gray-400">
-                          {/* <Image src={`${item.data.imgUrl}`} fill alt="i" className='w-full h-full object-cover' /> */}
+                          <div className="w-full h-[290px] bg-gray-400">
+                          <Image src={`${item.data.imgUrl}`} width={800} height={800} alt="i" className='w-full h-full object-cover' />
                           </div>
 
                         <h1 className="text-xl font-semibold">{item.data.name}</h1>
-                        <span className="text-md font-thin">{item.data.role}</span>
+                        <span className="text-md font-medium">{item.data.role}</span>
                         </div>
                   </SwiperSlide>
 

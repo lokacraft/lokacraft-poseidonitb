@@ -7,6 +7,7 @@ import Proker from "@/components/material/home/proker";
 import Banner from "../../../public/img/home/c2bottomBanner.png"
 import BottomBanner from "@/components/material/bottomBanner";
 import KenaganPoseidon from "@/components/material/home/kenaganPoseidon";
+import { Kemitraan } from "@/components/material/about/kemitraan";
 
 export default function Home() {
   return (
@@ -21,6 +22,8 @@ export default function Home() {
       <Testimonial />
       {/* Kenangan POSEIDON */}
       <KenaganPoseidon />
+      {/* kemitraan */}
+      <Kemitraan />
       {/* bottombanner */}
       <BottomBanner bannerImage={Banner} title="Mari Bergabung dan Dukung POSEIDON" path="/contact" />
     </div>

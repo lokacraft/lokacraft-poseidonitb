@@ -118,8 +118,7 @@ function Category() {
                   <TableCaption>A list of your article&apos;s categories.</TableCaption>
                   <TableHeader>
                   <TableRow>
-                        <TableHead className="w-[100px]">uid</TableHead>
-                        <TableHead>Nama</TableHead>
+                        <TableHead className="w-[300px]">Nama</TableHead>
                         <TableHead>Deskripsi</TableHead>
                         <TableHead className="text-right">Action</TableHead>
                   </TableRow>
@@ -127,7 +126,6 @@ function Category() {
                   <TableBody>
                   {category.map((item) => (
                         <TableRow key={item.id}>
-                              <TableCell>{item.id}</TableCell>
                               <TableCell className="font-semibold">{item.data.name}</TableCell>
                               <TableCell>{item.data.description}</TableCell>
                               <TableCell className="text-right">

@@ -32,6 +32,7 @@ import EditAuthor from '@/components/material/admin/author/editAuthor'
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover'
 import { Separator } from '@/components/ui/separator'
 import { Dialog, DialogClose, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog'
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
     
 
 function Author() {
@@ -128,10 +129,10 @@ function Author() {
                   </Sheet>
             </div>
             <Table>
-                  <TableCaption>A list of your article&apos;s categories.</TableCaption>
+                  <TableCaption>A list of your Authors.</TableCaption>
                   <TableHeader>
                   <TableRow>
-                        <TableHead className="w-[100px]">uid</TableHead>
+                        <TableHead>photo</TableHead>
                         <TableHead>Nama</TableHead>
                         <TableHead>Deskripsi</TableHead>
                         <TableHead className="text-right">Action</TableHead>
@@ -140,7 +141,12 @@ function Author() {
                   <TableBody>
                   {author.map((item) => (
                         <TableRow key={item.id}>
-                              <TableCell>{item.id}</TableCell>
+                              <TableCell>
+                              <Avatar>
+                                    <AvatarImage src={`${item.data.imgUrl}`} />
+                                    <AvatarFallback>CN</AvatarFallback>
+                              </Avatar>
+                              </TableCell>
                               <TableCell className="font-semibold">{item.data.name}</TableCell>
                               <TableCell>{item.data.description}</TableCell>
                               <TableCell className="text-right">

@@ -6,6 +6,8 @@ import { doc, getDoc } from "firebase/firestore";
 import { db } from "../../../../../../firebase";
 import HTMLFlipBook from "react-pageflip";
 import { Document, Page, pdfjs } from "react-pdf";
+import Link from 'next/link';
+import { IoMdArrowRoundBack } from 'react-icons/io';
 
 // pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
@@ -103,40 +105,60 @@ export default function BookPage({ params: paramsPromise }: { params: Promise<{ 
 
 
   return (
-<div className='w-screen h-[calc(100vh+30vh)] flex items-center justify-center'>
-      
-    <HTMLFlipBook
-      width={350}
-      height={500}
-      size="stretch"
-      minWidth={250}
-      maxWidth={400}
-      minHeight={400}
-      maxHeight={600}
-      startPage={0}
-      className="flipbook-container shadow-2xl"
-      drawShadow={false}
-        flippingTime={1700}
-        usePortrait={true}
-        startZIndex={10}
-        maxShadowOpacity={0.5}
-        swipeDistance={30}
-        showPageCorners={true}
-        disableFlipByClick={false}
-      style={{}}>
-            {[...Array(numPages).keys()].map((pNum) => (
-                              <Pages key={pNum} number={pNum + 1}>
-                                    <Document file={`/${book.fileUrl}.pdf`} onLoadSuccess={pNum === 0 ? onDocumentLoadSuccess : undefined}>
-                                          <Page pageNumber={pNum} width={400} renderAnnotationLayer={false} renderTextLayer={false} />
-                                    </Document>
-                                    {/* <p>
-                                          Page {pNum} of {numPages}
-                                    </p> */}
-                              </Pages>
-                              ))
-            }
-      </HTMLFlipBook>
-      
-</div>
+    <div className="w-screen flex flex-col gap-y-6 mt-[120px]">
+      <div className="w-[90%] mx-auto flex justify between">
+      <Link href="/article/" className="max-w-[120px] flex gap-x-3 items-center cursor-pointer">
+          <IoMdArrowRoundBack className="w-6 h-6" />
+          <span>kembali</span>
+          </Link>
+      </div>
+      <div className='w-screen h-[calc(100vh+10vh)] flex items-center justify-center'>
+            
+          <HTMLFlipBook
+            width={350}
+            height={500}
+            size="stretch"
+            minWidth={250}
+            maxWidth={400}
+            minHeight={400}
+            maxHeight={600}
+            startPage={1}
+            className="flipbook-container shadow-2xl"
+            drawShadow={false}
+            flippingTime={1700}
+            usePortrait={true}
+            startZIndex={10}
+            maxShadowOpacity={0.5}
+            swipeDistance={30}
+            showPageCorners={false}
+            disableFlipByClick={false}
+            style={{}}>
+              {/* Halaman Pembuka */}
+          {/* <Pages number={0}>
+            <div className="flex flex-col items-center justify-center h-full text-center text-xl font-semibold text-gray-700">
+              <p>Slide it to start 📖</p>
+            </div>
+          </Pages> */}
+                  {[...Array(numPages).keys()].map((pNum) => (
+                                    <Pages key={pNum + 1} number={pNum + 1}>
+                                          <Document file={`/${book.fileUrl}.pdf`} onLoadSuccess={pNum === 0 ? onDocumentLoadSuccess : undefined}>
+                                                <Page pageNumber={pNum} width={400} renderAnnotationLayer={false} renderTextLayer={false} />
+                                          </Document>
+                                          {/* <p>
+                                                Page {pNum} of {numPages}
+                                          </p> */}
+                                    </Pages>
+                                    ))
+                  }
+            {/* Halaman Penutup */}
+          {/* <Pages number={numPages + 1}>
+            <div className="flex flex-col items-center justify-center h-full text-center text-xl font-semibold text-gray-700">
+              <p>Thank you for reading! 🎉</p>
+            </div>
+          </Pages> */}
+            </HTMLFlipBook>
+            
+      </div>
+    </div>
   );
 }
